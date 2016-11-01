@@ -1,0 +1,28 @@
+// @NOTE We are already operating within the snapshots collection
+// so now we locate the author collection related to it
+{% for author in contents.authors %}
+
+{% assign author_image = author.image.url %}
+// Check whether there are multiple authors by seeing how many
+// items are looped over by referencing 'forloop'
+// There are multiple authors
+%img.article-item__author__image(src="{{ author_image }}" alt="{{ author.first_name | escape }}")
+{% endfor %}
+
+
+{% for author in contents.authors %}
+.article-item__author__name
+  {% if forloop.size > 1 %}
+  %span
+    // First author ourput
+    {% if forloop.first %}
+    by {{ author.first_name }}
+    // Following author output
+    {% else %}
+    and {{ author.first_name }}
+    {% endif %}
+  // There is only a single author
+  {% else %}
+  %span by {{ author.first_name }}
+  {% endif %}
+{% endfor %}
