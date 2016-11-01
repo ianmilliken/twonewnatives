@@ -8,36 +8,36 @@ handle: journal
 {% block content %}
 
 .container.u-spacer.u-after-site-nav
-  {% if contents.posts.size > 0 %}
+  {% if contents.journals.size > 0 %}
   %header.listings-header
     %h1.listings-header__title Journal
     %p.listings-header__intro We’ve tried to keep track of the interesting things that go on day by day as best we can, and this is where we scribble it all down.
 
-  {% paginate contents.posts by 10 %}
+  {% paginate contents.journals by 10 %}
   %section.listings-body
     %ul.article-list
-      {% for post in paginate.collection %}
+      {% for journal in paginate.collection %}
       %li.article-item
-        %a.article-item__link(href="{% path_to post %}")
-          %img.article-item__thumbnail(src="{{ post.image.url }}" alt="{{ post.title | escape }}")
+        %a.article-item__link(href="{% path_to journal %}")
+          %img.article-item__thumbnail(src="{{ journal.image.url }}" alt="{{ journal.title | escape }}")
           .article-item__body
-            .article-item__title {{ post.title }}
-            .article-item__summary {{ post.teaser }}
+            .article-item__title {{ journal.title }}
+            .article-item__summary {{ journal.teaser }}
             .article-item__meta
               .article-item__author
-                %img.article-item__author__image(src="{{ post.author.image.url }}" alt="{{ post.author.first_name | escape }}")
+                %img.article-item__author__image(src="{{ journal.author.image.url }}" alt="{{ journal.author.first_name | escape }}")
                 .article-item__author__name
                   %span by
-                  {% for author in post %}
+                  {% for author in journal %}
                   {{ author.first_name }}
                   {% endfor %}
               .u-group
                 .article-item__date
                   %i.fa.fa-clock-o
-                  {{ post.posted_at | date: '%a %d %b %Y' }}
+                  {{ journal.journaled_at | date: '%a %d %b %Y' }}
                 .article-item__location
                   %i.fa.fa-map-marker
-                  {{ post.location.city }}, {{ post.location.country }}
+                  {{ journal.location.city }}, {{ journal.location.country }}
       {% endfor %}
 
     .listings-pagination
@@ -70,7 +70,8 @@ handle: journal
   {% endpaginate %}
 
   {% else %}
-  %h2(style="text-align: center") No more posts!
+  %header.listings-header
+    %h2.listings-header__title No more journals!
   {% endif %}
 
 {% endblock %}

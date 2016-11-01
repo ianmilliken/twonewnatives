@@ -1,6 +1,6 @@
-name: Posts
-slug: posts
-description: A place to write blog posts
+name: Journals
+slug: journals
+description: Write journal entries here, like a diary
 label_field_name: title
 order_by: posted_at
 
@@ -19,18 +19,11 @@ fields:
     hint: Enter the post publish date
     localized: false
 
-- tags:
-    label: Tags
-    type: tags
-    required: false
-    hint: Enter the post tags
-    localized: false
-
 - author:
     label: Author
     type: many_to_many
     class_name: authors
-    inverse_of: posts
+    inverse_of: journals
     ui_enabled: true
 
 - location:

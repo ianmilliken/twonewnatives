@@ -1,0 +1,24 @@
+---
+title: journal template page
+content_type: journals
+---
+
+{% extends 'parent' %}
+{% block content %}
+
+%article.j-post
+  %section.p-banner
+    .container.u-center-group
+      .p-banner__background(style="background-image: url({{ journal.image.url }})")
+      .u-group
+        .p-banner__location
+          %i.fa.fa-map-marker
+          {{ journal.location.city }}, {{ journal.location.country }}
+        .p-banner__title {{ journal.title }}
+        .p-banner__teaser.u-hide-for-small {{ journal.teaser }}
+
+  .container
+    %section.j-post__body
+      %p {{ journal.body }}
+
+{% endblock %}

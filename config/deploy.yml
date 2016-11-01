@@ -1,6 +1,6 @@
 development:
   host: localhost:3000
-  handle: twonewnatives
+  handle: twonewnatives-empty
   email: ianmilliken@live.co.uk
   api_key: 98e557ec722a1a693e56d67531e4a1fec06de447
 
