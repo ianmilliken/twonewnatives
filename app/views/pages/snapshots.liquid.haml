@@ -28,7 +28,18 @@ handle: snapshots
               .article-item__author
                 %img.article-item__author__image(src="{{ snapshot.author.image.url }}" alt="{{ snapshot.author.first_name | escape }}")
                 .article-item__author__name
-                  %span by {{ snapshot.author.first_name }}
+                  {% for author in contents.authors %}
+                  {% if forloop.size > 1 %}
+                  %span
+                    {% if forloop.first %}
+                    by {{ author.first_name }}
+                    {% else %}
+                    and {{ author.first_name }}
+                    {% endif %}
+                  {% else %}
+                  %span by {{ author.first_name }}
+                  {% endif %}
+                  {% endfor %}
               .u-group
                 .article-item__date
                   %i.fa.fa-clock-o
