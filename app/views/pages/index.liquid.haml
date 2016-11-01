@@ -44,7 +44,7 @@ handle: home
                 .u-group
                   .article-item__date
                     %i.fa.fa-clock-o
-                    {{ journal.journaled_at | date: '%a %d %b %Y' }}
+                    {{ journal.posted_at | date: '%a %d %b %Y' }}
         {% endif %}
         {% endfor %}
     {% else %}
@@ -68,7 +68,7 @@ handle: home
                 .u-group
                   .article-item__date
                     %i.fa.fa-clock-o
-                    {{ snapshot.journaled_at | date: '%a %d %b %Y' }}
+                    {{ snapshot.posted_at | date: '%a %d %b %Y' }}
         {% endfor %}
     {% else %}
     %h2(style="text-align: center") No more snapshots!

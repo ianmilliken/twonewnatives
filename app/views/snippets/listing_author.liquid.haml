@@ -1,6 +1,6 @@
 // @NOTE We are already operating within the snapshots collection
 // so now we locate the author collection related to it
-{% for author in contents.authors %}
+{% for author in [ct].author %}
 {% assign author_image = author.image.url %}
 // If there is an author image, use it, if not, use fallback
 {% if author_image %}
@@ -11,7 +11,7 @@
 {% endfor %}
 
 // Produce author name attribution
-{% for author in contents.authors %}
+{% for author in [ct].author %}
 .article-item__author__name
   // Check whether there are multiple authors by seeing how many
   // items are looped over by referencing 'forloop'

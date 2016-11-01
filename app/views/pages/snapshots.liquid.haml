@@ -7,6 +7,8 @@ handle: snapshots
 
 {% extends 'layouts/default' %}
 {% block content %}
+// Store the content_type as "ct" for use in snippets
+{% assign ct = "snapshot" %}
 
 .container.u-spacer.u-after-site-nav
   {% if contents.snapshots.size > 0 %}

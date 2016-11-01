@@ -6,6 +6,8 @@ handle: journal
 ---
 {% extends 'layouts/default' %}
 {% block content %}
+// Store the content_type as "ct" for use in snippets
+{% assign ct = "journal" %}
 
 .container.u-spacer.u-after-site-nav
   {% if contents.journals.size > 0 %}
@@ -25,16 +27,11 @@ handle: journal
             .article-item__summary {{ journal.teaser }}
             .article-item__meta
               .article-item__author
-                %img.article-item__author__image(src="{{ journal.author.image.url }}" alt="{{ journal.author.first_name | escape }}")
-                .article-item__author__name
-                  %span by
-                  {% for author in journal %}
-                  {{ author.first_name }}
-                  {% endfor %}
+                {% include 'listing_author' %}
               .u-group
                 .article-item__date
                   %i.fa.fa-clock-o
-                  {{ journal.journaled_at | date: '%a %d %b %Y' }}
+                  {{ journal.posted_at | date: '%a %d %b %Y' }}
                 .article-item__location
                   %i.fa.fa-map-marker
                   {{ journal.location.city }}, {{ journal.location.country }}
