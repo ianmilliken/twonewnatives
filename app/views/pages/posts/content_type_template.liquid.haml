@@ -1,0 +1,51 @@
+---
+title: Post template page
+content_type: posts
+---
+
+{% extends 'parent' %}
+{% block content %}
+
+%article.j-post
+  %section.p-banner
+    .container.u-center-group
+      .p-banner__background(style="background-image: url({{ post.image.url }})")
+      .u-group
+        .p-banner__location
+          %i.fa.fa-map-marker
+          {{ post.location.city }}, {{ post.location.country }}
+        .p-banner__title {{ post.title }}
+        .p-banner__teaser.u-hide-for-small {{ post.teaser }}
+
+  .container
+    %section.j-post__body
+      %p {{ post.body }}
+
+  // @FIXME 'with_scope post: post' checks that the map(s) in 'contents.maps'
+  // belongs to this post, so we should not see the whole list of maps listed
+  // here like previously
+  {% with_scope post: post %}
+  {% for map in contents.maps %}
+  .map-type
+    %p The map {{ map.title }} is located in {{ map.post.title }}!
+    %p The longitude is {{ map.longitude }}
+    %p The latitude is {{ map.latitude }}
+
+  #custommap2(style="width: 100%; height: 300px;")
+    %script
+      mapboxgl.accessToken = 'pk.eyJ1IjoiaWFubWlsbGlrZW4iLCJhIjoiY2lzN2RoOW13MDAxOTJwbGoxNGszMXU3eSJ9.ysd82httIty2z9wBOvTXkw';
+      var long = {{ map.longitude }};
+      var lat = {{ map.latitude }};
+      var map = new mapboxgl.Map({
+      container: 'custommap2',
+      style: 'mapbox://styles/mapbox/streets-v8',
+      zoom: 10,
+      center: [ long, lat ],
+      bearing: 60,
+      pitch: 50
+      });
+      map.addControl(new mapboxgl.Geolocate({position: 'top-left'}));
+  {% endfor %}
+  {% endwith_scope %}
+
+{% endblock %}

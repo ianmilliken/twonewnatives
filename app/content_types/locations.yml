@@ -1,0 +1,21 @@
+name: Locations
+slug: locations
+description: The list of locations you have visited
+label_field_name: city
+order_by: city
+group_by: country
+
+fields:
+- city:
+    label: City
+    type: string
+    required: true
+    hint: What is the City, Town, Village?
+    localized: false
+
+- country:
+    label: Country
+    type: string
+    required: false
+    hint: What country is this in?
+    localized: false

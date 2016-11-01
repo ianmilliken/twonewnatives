@@ -1,0 +1,19 @@
+---
+title: Snapshots template page
+content_type: snapshots
+---
+
+{% extends 'parent' %}
+{% block content %}
+
+%article.content
+  %header.container
+    .content-narrow.u-center
+      %h1 {{ snapshot.title }}
+      %p.content__intro {{ snapshot.intro }}
+  %section.container
+    .content__body
+      %p {{ snapshot.body }}
+      %script(src="https://500px.com/embed.js")
+
+{% endblock %}

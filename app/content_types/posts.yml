@@ -1,0 +1,61 @@
+name: Posts
+slug: posts
+description: A place to write blog posts
+label_field_name: title
+order_by: posted_at
+
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    hint: Enter the Post title
+    localized: false
+
+- posted_at:
+    label: Posted at
+    type: date_time
+    required: false
+    hint: Enter the post publish date
+    localized: false
+
+- tags:
+    label: Tags
+    type: tags
+    required: false
+    hint: Enter the post tags
+    localized: false
+
+- author:
+    label: Author
+    type: many_to_many
+    class_name: authors
+    inverse_of: posts
+    ui_enabled: true
+
+- location:
+    label: Location
+    type: belongs_to
+    class_name: locations
+    hint: Choose a location for this Post
+
+- teaser:
+    label: Teaser
+    type: string
+    required: false
+    hint: Enter the teaser text for this Post
+    localized: false
+
+- image:
+    label: Image
+    type: file
+    required: false
+    hint: Upload the main post image
+    localized: false
+
+- body:
+    label: Body
+    type: text
+    required: false
+    hint: Enter the main post text
+    localized: false

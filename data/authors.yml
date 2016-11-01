@@ -1,0 +1,20 @@
+- "Sample 1":
+    last_name: "Delectus dolor ratione impedit perspiciatis."
+    bio: "Nihil maiores omnis eos suscipit eveniet. Quod rerum cumque totam consectetur deserunt. Commodi numquam voluptate. Ut qui eos non nihil quae."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 2":
+    last_name: "Deleniti eos ut mollitia tenetur nam."
+    bio: "Quo et incidunt. Qui nostrum vitae ullam vel odit omnis quia. Impedit omnis omnis eum ut. Velit non similique."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 3":
+    last_name: "Similique sunt in quia consequatur qui est quos."
+    bio: "Dolorem voluptatibus quia sed nobis aspernatur numquam voluptatem. Dolore officiis sed. Nisi numquam illum. Ea porro nobis nihil voluptatum optio. Error architecto culpa."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 4":
+    last_name: "Rerum optio tempore corporis temporibus."
+    bio: "Non deleniti omnis. Ipsa ut repellat fugiat tempora laudantium itaque in. Eos itaque corrupti autem necessitatibus incidunt. Eos quisquam unde voluptatem exercitationem sunt consectetur. Laborum praesentium aut nesciunt ut eos ut culpa."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+

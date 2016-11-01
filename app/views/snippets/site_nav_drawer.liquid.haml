@@ -1,0 +1,9 @@
+.site-drawer.u-show-for-small
+  .site-drawer__close
+  %ul.site-drawer__list
+    {% for page_in_nav in site.pages %}
+    /{% if page_in_nav.depth == 1 %}
+    %li(class="site-drawer__list-item {% if page.fullpath contains page_in_nav.fullpath %}site-drawer__list-item--active{% endif %}" )
+      %a.site-drawer__link(href="{% path_to page_in_nav %}") {{ page_in_nav.title }}
+    /{% endif %}
+    {% endfor %}

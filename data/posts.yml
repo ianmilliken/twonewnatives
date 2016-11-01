@@ -1,0 +1,20 @@
+- "Sample 1":
+    teaser: "Odit culpa quidem fugit. Dignissimos asperiores id temporibus fuga. Voluptatibus consequatur provident. Et sed repudiandae inventore aut. Aliquid quia et tenetur cum vitae quia neque."
+    # image: /samples/posts/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    body: "Quasi totam ex aut ut. Accusamus rem tenetur earum aut et. Omnis corporis dolorem. Eum id quia."
+
+- "Sample 2":
+    teaser: "Assumenda voluptates repudiandae. In dolorum vero et et esse dolorem. Facere error dolorem aut."
+    # image: /samples/posts/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    body: "Quis quos sit quam sit aut. Corporis asperiores quidem. Fugit et voluptatem ipsam assumenda commodi aspernatur veniam. Ipsa minima similique."
+
+- "Sample 3":
+    teaser: "Totam recusandae soluta maiores quis mollitia. Odit ut vel sit perspiciatis. Autem distinctio ullam impedit. Recusandae tempora qui eos omnis consequuntur ipsum."
+    # image: /samples/posts/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    body: "Ipsam velit qui qui. Ut unde sequi eum iusto. Quo sit quaerat et doloremque vitae tempore."
+
+- "Sample 4":
+    teaser: "Aut praesentium aspernatur aliquid. Fugit vitae illum nemo. Saepe dolores et suscipit qui facilis adipisci."
+    # image: /samples/posts/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    body: "Id repudiandae sit iure. Aut ea sed molestias provident. Consequatur ut voluptatem ut inventore."
+

@@ -1,0 +1,16 @@
+- "Sample 1":
+    # image: /samples/snapshots/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    description: "Sequi molestiae libero et. Culpa nihil nobis laudantium in quod numquam vero. Accusantium aut temporibus necessitatibus deleniti. Quia quas aut laborum. Beatae in consequuntur quo fugit doloribus necessitatibus sit."
+
+- "Sample 2":
+    # image: /samples/snapshots/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    description: "Harum non quidem. In soluta qui. Aut voluptatem impedit veritatis saepe laboriosam ut. Ipsam necessitatibus esse atque a."
+
+- "Sample 3":
+    # image: /samples/snapshots/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    description: "Hic iste maxime ipsa laborum harum aut sunt. Aut molestiae doloribus natus qui quis quod et. Consequatur adipisci aperiam cum et voluptatem et. Repellat quidem sit rerum beatae."
+
+- "Sample 4":
+    # image: /samples/snapshots/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+    description: "Nostrum qui et qui et rerum officia. Voluptate ut dolor a impedit commodi quia architecto. Dolore magnam minima dolorum non. Quasi temporibus consequatur et labore voluptates nemo. Non maxime quaerat corporis esse."
+

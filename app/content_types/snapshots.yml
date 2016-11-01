@@ -1,0 +1,54 @@
+name: Snapshots
+slug: snapshots
+label_field_name: title
+order_by: posted_at
+
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- posted_at:
+    label: Posted at
+    type: date_time
+    required: false
+    hint: Enter the post publish date
+    localized: false
+
+- location:
+    label: Location
+    type: belongs_to
+    class_name: locations
+    hint: Choose a location for these Snapshots
+
+- author:
+    label: Author
+    type: many_to_many
+    class_name: authors
+    inverse_of: snapshots
+    ui_enabled: true
+    hint: Choose an author for these Snapshots
+
+- intro:
+    label: Intro
+    type: text
+    required: false
+    hint: Enter the intro text
+    localized: false
+
+- image:
+    label: Image
+    type: file
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- body:
+    label: Body
+    type: text
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false

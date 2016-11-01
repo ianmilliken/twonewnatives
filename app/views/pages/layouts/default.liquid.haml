@@ -1,0 +1,32 @@
+---
+title: Default layout
+is_layout: false
+---
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{charset: "utf-8"}
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    %title {{ site.name }}
+    {{ 'application.css' | stylesheet_tag }}
+
+    // @FIXME Inserting Mapbox directly here
+    //%script(src="https://api.mapbox.com/mapbox-gl-js/v0.22.1/mapbox-gl.js")
+    //%link(href="https://api.mapbox.com/mapbox-gl-js/v0.22.1/mapbox-gl.css" rel="stylesheet")
+
+  %body
+    .body
+      {% include 'nav' %}
+
+      {% block content %}
+      {% endblock %}
+
+      {{ 'jquery.min.js' | javascript_tag }}
+      {{ 'application.js' | javascript_tag }}
+
+      {% include 'footer' %}
+
+    .site-overlay
+    {% include 'site_nav_drawer' %}
