@@ -71,6 +71,10 @@
     font-size: 1.7rem
   }
 
+}
+
+@include bp-large {
+
   .container {
 
     &__half {

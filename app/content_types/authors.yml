@@ -4,35 +4,29 @@ description: A description of the content type for the editors
 label_field_name: first_name
 order_by: first_name
 
-# A list describing each field
 fields:
-- first_name: # The lowercase, underscored name of the field
-    label: First name # Human readable name of the field
+- first_name:
+    label: First name
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
     localized: false
 
-- last_name: # The lowercase, underscored name of the field
-    label: Last name # Human readable name of the field
+- last_name:
+    label: Last name
     type: string
     required: false
-    hint: Explanatory text displayed in the back office
     localized: false
 
-- bio: # The lowercase, underscored name of the field
-    label: Bio # Human readable name of the field
+- bio:
+    label: Bio
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
     localized: false
-    # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
 
-- image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
+- image:
+    label: Image
     type: file
     required: false
-    hint: Explanatory text displayed in the back office
     localized: false
 
 # Allow for many multiple authors for the post content type

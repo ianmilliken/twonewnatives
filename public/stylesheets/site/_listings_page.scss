@@ -77,7 +77,7 @@ $thumbnail_small_offset: 22rem;
     }
 
     &__title {
-      font-size: 2.3rem;
+      font-size: 1.9rem;
       font-weight: 600;
       color: $primary_color;
       letter-spacing: -0.056rem;
@@ -86,9 +86,8 @@ $thumbnail_small_offset: 22rem;
     }
 
     &__summary {
-      font-family: $serif_font;
       font-size: 1.4rem;
-      line-height: 1.5;
+      line-height: 1.4;
       color: $secondary_color;
       margin-top: 1rem;
     }
@@ -187,7 +186,7 @@ $thumbnail_small_offset: 22rem;
   .article-item {
 
     &__title {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
 
     &__link:hover {
@@ -205,12 +204,6 @@ $thumbnail_small_offset: 22rem;
         width: $thumbnail_small_width;
         height: 13.4rem;
       }
-    }
-
-    &__summary {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
     }
 
     &__body {
@@ -235,6 +228,8 @@ $thumbnail_small_offset: 22rem;
 
     &__date {
       display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 400;
     }
 
     &__location {

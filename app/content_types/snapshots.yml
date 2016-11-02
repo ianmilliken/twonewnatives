@@ -32,11 +32,11 @@ fields:
     ui_enabled: true
     hint: Choose an author for these Snapshots
 
-- intro:
-    label: Intro
-    type: text
+- teaser:
+    label: Teaser
+    type: string
     required: false
-    hint: Enter the intro text
+    hint: Enter the teaser text for this Post
     localized: false
 
 - image:
@@ -44,6 +44,13 @@ fields:
     type: file
     required: false
     hint: Explanatory text displayed in the back office
+    localized: false
+
+- intro:
+    label: Intro
+    type: text
+    required: false
+    hint: Enter the intro text
     localized: false
 
 - body:
