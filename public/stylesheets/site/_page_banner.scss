@@ -49,9 +49,10 @@
     &__teaser {
       color: $white;
       font-size: 2.7rem;
-      font-family: $cursive_font;
+      font-family: $serif_font;
+      font-style: italic;
       letter-spacing: -0.06rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
 
     &__button {
@@ -62,11 +63,16 @@
       display: inline-block;
       padding: 1rem 2.6rem;
       background-color: $primary_color;
-      border-radius: 0.4rem;
+      border-radius: 0.2rem;
       border-bottom: 0.3rem solid #D72323;
       color: $white;
       text-transform: uppercase;
       margin-top: 3rem;
+      box-shadow: 0 0 3rem 1rem rgba(0,0,0,0.5);
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
@@ -81,10 +87,11 @@
 
     &__title {
       font-size: 6.8rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     &__button {
+      padding: 1.4rem 3rem;
       margin-top: 0;
     }
   }

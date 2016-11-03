@@ -4,7 +4,7 @@
 }
 
 .post-item {
-  border: 0.1rem solid #E4E4E4;
+  border: 0.1rem solid $grey;
   border-radius: 0.5rem;
   overflow: hidden;
   &:not(:first-of-type) {

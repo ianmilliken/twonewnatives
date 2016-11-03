@@ -48,7 +48,7 @@ fields:
 
 - intro:
     label: Intro
-    type: text
+    type: string
     required: false
     hint: Enter the intro text
     localized: false

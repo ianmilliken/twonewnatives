@@ -26,8 +26,8 @@ handle: home
 
 .container.u-spacer
   // JOURNAL journals
-  {% if contents.journals.size > 1 %}
-  %section.container__half
+  {% if contents.journals.size > 0 %}
+  %section.container__half.u-ifl
     %h2.listings-header__title Latest journals
     %section.listings-body
       %ul.article-list
@@ -41,14 +41,20 @@ handle: home
               .article-item__title {{ journal.title }}
               .article-item__summary {{ journal.teaser }}
               .article-item__meta
-                .u-group
+                .u-group--unstyled
                   .article-item__date
                     %i.fa.fa-clock-o
                     {{ journal.posted_at | date: '%a %d %b %Y' }}
+        {% else %}
+        %li.article-item--small
+          .article-item__body--small
+            .article-item__title More coming soon!
         {% endif %}
         {% endfor %}
     {% else %}
-    %h2(style="text-align: center") No more journals!
+    %section.container__half.u-ifl
+      %h2.listings-header__title Latest journals
+      %p More coming soon!
     {% endif %}
 
   // SNAPSHOTS
@@ -71,7 +77,8 @@ handle: home
                     {{ snapshot.posted_at | date: '%a %d %b %Y' }}
         {% endfor %}
     {% else %}
-    %h2(style="text-align: center") No more snapshots!
+    %section.container__half
+      %h2.listings-header__title Latest snapshots
     {% endif %}
 
 {% endblock %}

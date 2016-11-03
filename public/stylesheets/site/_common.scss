@@ -23,6 +23,7 @@
 
   p {
     font-size: 1.6rem;
+    font-weight: 300;
     line-height: $paragraph_lineheight;
   }
 
@@ -52,7 +53,7 @@
 @include bp-medium {
 
   h1 {
-    font-size: 4rem;
+    font-size: 4.6rem;
   }
 
   h2 {

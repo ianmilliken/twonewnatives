@@ -1,6 +1,6 @@
 // Check whether this is the home page or a page not at root level
 // @FIXME This will not work forever
-{% if page.handle == 'home' or page.depth > 1 and page.fullpath contains 'posts' %}
+{% if page.handle == 'home' or page.depth > 1 and page.fullpath contains 'journals' %}
 %nav.site-nav
   .container
     .flexbox.flexbox--light

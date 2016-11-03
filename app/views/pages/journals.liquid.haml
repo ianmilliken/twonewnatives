@@ -28,7 +28,7 @@ handle: journal
             .article-item__meta
               .article-item__author
                 {% include 'listing_author' %}
-              .u-group
+              .u-group--unstyled
                 .article-item__date
                   %i.fa.fa-clock-o
                   {{ journal.posted_at | date: '%a %d %b %Y' }}
