@@ -35,24 +35,27 @@
       font-weight: 700;
       letter-spacing: 0.03rem;
       text-transform: uppercase;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 10px rgba(0,0,0,0.75);
     }
 
     &__title {
       color: $white;
       font-size: 3.8rem;
       font-weight: 800;
-      letter-spacing: -0.15rem;
+      letter-spacing: -0.08rem;
       line-height: 1.18;
+      text-shadow: 0 0 10px rgba(0,0,0,0.75);
     }
 
     &__teaser {
       color: $white;
       font-size: 2.7rem;
+      font-weight: 300;
       font-family: $serif_font;
       font-style: italic;
-      letter-spacing: -0.06rem;
       margin-bottom: 3rem;
+      text-shadow: 0 0 10px rgba(0,0,0,0.75);
     }
 
     &__button {
@@ -71,7 +74,7 @@
       box-shadow: 0 0 3rem 1rem rgba(0,0,0,0.5);
 
       &:hover {
-        opacity: 0.8;
+        color: rgba(255,255,255,0.8);
       }
     }
   }
