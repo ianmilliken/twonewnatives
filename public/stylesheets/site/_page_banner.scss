@@ -2,7 +2,7 @@
 
   .p-banner {
     height: 60vh;
-    min-height: 48rem;
+    min-height: 40rem;
     max-height: 60rem;
     position: relative;
     text-align: center;
@@ -98,5 +98,12 @@
       padding: 1.4rem 3rem;
       margin-top: 0;
     }
+  }
+}
+
+include bp-medium {
+
+  .p-banner {
+    min-height: 40rem;
   }
 }
