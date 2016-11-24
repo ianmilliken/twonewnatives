@@ -45,10 +45,6 @@ handle: home
                   .article-item__date
                     %i.fa.fa-clock-o
                     {{ journal.posted_at | date: '%a %d %b %Y' }}
-        {% else %}
-        %li.article-item--small
-          .article-item__body--small
-            .article-item__title More coming soon!
         {% endif %}
         {% endfor %}
     {% else %}
