@@ -18,7 +18,7 @@ handle: journal
   {% paginate contents.journals by 10 %}
   %section.listings-body
     %ul.article-list
-      {% for journal in paginate.collection %}
+      {% for journal in paginate.collection reverse %}
       %li.article-item
         %a.article-item__link(href="{% path_to journal %}")
           %img.article-item__thumbnail(src="{{ journal.image.url }}" alt="{{ journal.title | escape }}")
