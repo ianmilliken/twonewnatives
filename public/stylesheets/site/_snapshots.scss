@@ -1,9 +1,13 @@
+@mixin content-width($width) {
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @include bp-x-small {
 
   .content-narrow {
-    max-width: 76.8rem;
-    margin-left: auto;
-    margin-right: auto;
+    @include content-width(76.8rem);
   }
 
   .content {
@@ -24,9 +28,7 @@
       }
 
       & > p {
-        max-width: 76.8rem;
-        margin-left: auto;
-        margin-right: auto;
+        @include content-width(76.8rem);
         text-align: center;
 
         & .fa {
