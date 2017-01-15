@@ -21,5 +21,4 @@ group :misc do
   # Add your extra gems here
   gem 'susy', require: 'susy'
   # gem 'bourbon', require: 'bourbon'
-  gem 'font-awesome-sass', require: 'font-awesome-sass'
 end

@@ -52,8 +52,6 @@ GEM
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.14)
-    font-awesome-sass (4.5.0)
-      sass (>= 3.2)
     formatador (0.2.5)
     guard (2.14.0)
       formatador (>= 0.2.4)
@@ -203,7 +201,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  font-awesome-sass
   guard-livereload (~> 2.5.1)
   locomotivecms_wagon (~> 2.2.0.rc1)
   rb-fsevent (~> 0.9.1)
