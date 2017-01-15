@@ -18,6 +18,13 @@ fields:
     hint: Enter the post publish date
     localized: false
 
+- show_in_listings:
+    label: Show in listings?
+    type: boolean
+    required: false
+    hint: If false, this article will be hidden from the listing sections. However, search engines will still be able to find it (for now)
+    localized: false
+
 - location:
     label: Location
     type: belongs_to

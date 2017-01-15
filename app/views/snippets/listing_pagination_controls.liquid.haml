@@ -1,0 +1,30 @@
+// [ct]    = inherited from views/pages/listing_pagination.liquid.haml
+// [cltn]  = inherited from views/pages/listing_pagination.liquid.haml
+
+.listings-pagination
+  .listings-pagination__entries.u-hide-for-small
+    {% if paginate.per_page > paginate.total_entries %}
+    Showing {{ paginate.total_entries }} of {{ paginate.total_entries }} {{ ct }} entries
+    {% else %}
+    Showing {{ paginate.per_page }} of {{ paginate.total_entries }} {{ ct }} entries
+    {% endif %}
+  .listings-pagination__controls
+    .listings-pagination__pages Page {{ paginate.current_page }} of {{ paginate.total_pages }}
+    {% if paginate.previous %}
+    %a.listings-pagination__button(href="?page={{ paginate.previous_page }}")
+      %i.fa.fa-chevron-left
+      Previous
+    {% else %}
+    %a.listings-pagination__button.u-disabled
+      %i.fa.fa-chevron-left
+      Previous
+    {% endif %}
+    {% if paginate.next %}
+    %a.listings-pagination__button(href="?page={{ paginate.next_page }}")
+      Next
+      %i.fa.fa-chevron-right
+    {% else %}
+    %a.listings-pagination__button.u-disabled
+      Next
+      %i.fa.fa-chevron-right
+    {% endif %}

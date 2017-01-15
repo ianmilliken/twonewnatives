@@ -1,0 +1,30 @@
+// [ct]    = inherited from views/pages/listing.liquid.haml
+// [cltn]  = inherited from views/pages/listing.liquid.haml
+
+// Filter the pagination collection with the following scope
+{% with_scope posted_at.lte: now, order_by: 'posted_at.desc', show_in_listings: true %}
+{% paginate contents.[cltn] by 10 %}
+%section.listings-body
+  %ul.article-list
+    {% for ct in paginate.collection %}
+    %li.article-item
+      %a.article-item__link(href="{% path_to ct %}")
+        %img.article-item__thumbnail(src="{{ ct.image.url }}" alt="{{ ct.title | escape }}")
+        .article-item__body
+          .article-item__title {{ ct.title }}
+          .article-item__summary {{ ct.teaser }}
+          .article-item__meta
+            .article-item__author
+              {% include 'listing_author' %}
+            .u-group--unstyled
+              .article-item__date
+                %i.fa.fa-clock-o
+                {{ ct.posted_at | date: '%a %d %b %Y' }}
+              .article-item__location
+                %i.fa.fa-map-marker
+                {{ ct.location.city }}, {{ ct.location.country }}
+    {% endfor %}
+  // Bring in the pagination controls
+  {% include 'listing_pagination_controls'%}
+{% endpaginate %}
+{% endwith_scope %}

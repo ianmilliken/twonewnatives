@@ -4,74 +4,15 @@ listed: true
 published: true
 handle: journal
 ---
+
 {% extends 'layouts/default' %}
 {% block content %}
+
 // Store the content_type as "ct" for use in snippets
 {% assign ct = "journal" %}
+// Store the collection as "cltn" for use in snippets
+{% assign cltn = "journals" %}
 
-.container.u-spacer.u-after-site-nav
-  {% if contents.journals.size > 0 %}
-  %header.listings-header
-    %h1.listings-header__title Journal
-    %p.listings-header__intro We’ve tried to keep track of the interesting things that go on day by day as best we can, and this is where we scribble it all down.
-
-  {% with_scope posted_at.lte: now, order_by: 'posted_at.desc' %}
-  {% paginate contents.journals by 10 %}
-  %section.listings-body
-    %ul.article-list
-      {% for journal in paginate.collection %}
-      %li.article-item
-        %a.article-item__link(href="{% path_to journal %}")
-          %img.article-item__thumbnail(src="{{ journal.image.url }}" alt="{{ journal.title | escape }}")
-          .article-item__body
-            .article-item__title {{ journal.title }}
-            .article-item__summary {{ journal.teaser }}
-            .article-item__meta
-              .article-item__author
-                {% include 'listing_author' %}
-              .u-group--unstyled
-                .article-item__date
-                  %i.fa.fa-clock-o
-                  {{ journal.posted_at | date: '%a %d %b %Y' }}
-                .article-item__location
-                  %i.fa.fa-map-marker
-                  {{ journal.location.city }}, {{ journal.location.country }}
-      {% endfor %}
-
-
-    .listings-pagination
-      .listings-pagination__entries.u-hide-for-small
-        {% if paginate.per_page > paginate.total_entries %}
-        Showing {{ paginate.total_entries }} of {{ paginate.total_entries }} journal entries
-        {% else %}
-        Showing {{ paginate.per_page }} of {{ paginate.total_entries }} journal entries
-        {% endif %}
-      .listings-pagination__controls
-        .listings-pagination__pages Page {{ paginate.current_page }} of {{ paginate.total_pages }}
-        {% if paginate.previous %}
-        %a.listings-pagination__button(href="?page={{ paginate.previous_page }}")
-          %i.fa.fa-chevron-left
-          Previous
-        {% else %}
-        %a.listings-pagination__button.u-disabled
-          %i.fa.fa-chevron-left
-          Previous
-        {% endif %}
-        {% if paginate.next %}
-        %a.listings-pagination__button(href="?page={{ paginate.next_page }}")
-          Next
-          %i.fa.fa-chevron-right
-        {% else %}
-        %a.listings-pagination__button.u-disabled
-          Next
-          %i.fa.fa-chevron-right
-        {% endif %}
-  {% endpaginate %}
-  {% endwith_scope %}
-
-  {% else %}
-  %header.listings-header
-    %h2.listings-header__title No more journals!
-  {% endif %}
+{% include 'listing' %}
 
 {% endblock %}

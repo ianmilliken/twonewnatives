@@ -31,9 +31,10 @@ handle: home
     %h2.listings-header__title Latest journals
     %section.listings-body
       %ul.article-list
+        {% with_scope posted_at.lte: now, order_by: 'posted_at.desc', show_in_listings: true %}
         {% for journal in contents.journals %}
-        // Render all but the last (latest) journals here
-        {% if forloop.last == false %}
+        // Render all but the first (latest) journals here
+        {% if forloop.first == false %}
         %li.article-item--small
           %a.article-item__link(href="{% path_to journal %}")
             %img.article-item__thumbnail--small(src="{{ journal.image.url }}" alt="{{ journal.title | escape }}")
@@ -47,6 +48,7 @@ handle: home
                     {{ journal.posted_at | date: '%a %d %b %Y' }}
         {% endif %}
         {% endfor %}
+        {% endwith_scope %}
     {% else %}
     %section.container__half.u-ifl
       %h2.listings-header__title Latest journals
@@ -59,6 +61,7 @@ handle: home
     %h2.listings-header__title Latest snapshots
     %section.listings-body
       %ul.article-list
+        {% with_scope posted_at.lte: now, order_by: 'posted_at.desc', show_in_listings: true %}
         {% for snapshot in contents.snapshots %}
         %li.article-item--small
           %a.article-item__link(href="{% path_to snapshot %}")
@@ -72,6 +75,7 @@ handle: home
                     %i.fa.fa-clock-o
                     {{ snapshot.posted_at | date: '%a %d %b %Y' }}
         {% endfor %}
+        {% endwith_scope %}
     {% else %}
     %section.container__half
       %h2.listings-header__title Latest snapshots
