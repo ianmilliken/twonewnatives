@@ -1,0 +1,31 @@
+---
+title: Sitemap
+slug: sitemap
+is_layout: false
+listed: false
+published: true
+handle: sitemap
+cache_strategy: none
+response_type: text/xml
+position: 1
+---
+%xml(version="1.0" encoding="UTF-8")
+  %urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    {% for page in site.pages %}
+    {% if page.published? %}
+    {% case page.slug %}
+    {% when 'index' %}
+    %url
+      %loc http://{{ host }}
+      %lastmod {{ now | date: "%F" }}
+      %changefreq weekly
+      %priority 0.5
+    {% else %}
+    %url
+      %loc http://{{ host }}/{{ page.fullpath }}
+      %lastmod {{ now | date: "%F" }}
+      %changefreq weekly
+      %priority 0.5
+    {% endcase %}
+    {% endif %}
+    {% endfor %}
