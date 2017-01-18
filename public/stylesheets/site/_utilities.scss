@@ -53,6 +53,10 @@
     width: 100%;
   }
 
+  .u-clear {
+    @include susy-clearfix;
+  }
+
   /* Temporary class for homepage */
   .u-ifl {
     border-bottom: 0.1rem solid $grey;

@@ -1,0 +1,66 @@
+---
+title: About
+published: true
+handle: about
+---
+
+{% extends 'layouts/default' %}
+{% block content %}
+
+.container.u-spacer.u-after-site-nav
+  %header.listings-header
+    %h1.listings-header__title
+      {% editable_text page_title, label: "Page Title", hint: "What is this page's title?" %}
+      We’re the Two New Natives
+      {% endeditable_text %}
+    %p.listings-header__intro
+      {% editable_text page_intro, label: "Page Intro", hint: "What is this page about?" %}
+      But you can call us Clare and Ian
+      {% endeditable_text %}
+
+  %section.listings-body
+    .u-clear
+      .about-intro
+        {% editable_text "who_summary", hint: "A short summary of who you are" %}
+        Default text
+        {% endeditable_text %}
+      .about-image
+        %img(src="{% editable_file 'page_image', hint: 'Upload an image' %}{% endeditable_file %}")
+
+  %section.j-post__body
+    %h2
+      {% editable_text "Section 01 Title" %}
+      Leaving 9-till-5 behind
+      {% endeditable_text %}
+    %p
+      {% editable_text "Section 01 Text" %}
+      Default text
+      {% endeditable_text %}
+
+    %h2
+      {% editable_text "Section 02 Title" %}
+      What you’ll find here
+      {% endeditable_text %}
+    %p
+      {% editable_text "Section 02 Text" %}
+      Default text
+      {% endeditable_text %}
+
+    %h2
+      {% editable_text "Section 03 Title" %}
+      Where else you can find us
+      {% endeditable_text %}
+    %p
+      {% editable_text "Section 03 Text" %}
+      Default text
+      {% endeditable_text %}
+
+    %ul.about-list
+      {% for metafield in site.metafields.social %}
+      %li.about-list__item
+        %a.about-list__link(href="{{ metafield.value }}" target="_blank")
+          %i(class="fa fa-{{ metafield.label | downcase }}" aria-hidden="true")
+          Follow us on {{ metafield.label }}
+      {% endfor %}
+
+{% endblock %}
