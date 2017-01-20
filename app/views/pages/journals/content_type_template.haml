@@ -20,6 +20,8 @@ content_type: journals
   .container
     %section.j-post__body
       %p {{ journal.body }}
+      
+      {% include 'disqus' %}
       %script(src="https://500px.com/embed.js")
 
 {% endblock %}

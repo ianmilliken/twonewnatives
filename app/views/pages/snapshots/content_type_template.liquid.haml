@@ -14,6 +14,8 @@ content_type: snapshots
   %section.container
     .content__body
       %p {{ snapshot.body }}
+
+      {% include 'disqus' %}
       %script(src="https://500px.com/embed.js")
 
 {% endblock %}
