@@ -120,9 +120,11 @@ $thumbnail_small_offset: 22rem;
         box-shadow: 0 0.2rem 1rem 0 rgba(0,0,0,0.22);
         float: left;
         margin-right: 1rem;
+        position: relative;
 
         & + .article-item__author__image {
           margin-left: -2.6rem;
+          z-index: -1;
         }
       }
 
