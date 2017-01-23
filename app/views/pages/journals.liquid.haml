@@ -8,11 +8,6 @@ handle: journal
 {% extends 'layouts/default' %}
 {% block content %}
 
-// Store the content_type as "ct" for use in snippets
-{% assign ct = "journal" %}
-// Store the collection as "cltn" for use in snippets
-{% assign cltn = "journals" %}
-
-{% include 'listing' %}
+{% include 'listing' with content_type: 'journal', collection: 'journals' %}
 
 {% endblock %}

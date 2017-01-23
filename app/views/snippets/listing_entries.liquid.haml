@@ -1,0 +1,58 @@
+// [ct]    = inherited from views/pages/listing.liquid.haml
+// [cltn]  = inherited from views/pages/listing.liquid.haml
+
+// Filter the pagination collection with the following scope
+{% with_scope posted_at.lte: now, order_by: 'posted_at.desc', show_in_listings: true %}
+{% paginate contents.[collection] by 10 %}
+%section.listings-body
+  %ul.article-list
+    {% for item in paginate.collection %}
+    %li.article-item
+      %a.article-item__link(href="{% path_to item %}")
+        %img.article-item__thumbnail(src="{{ item.image.url }}" alt="{{ item.title | escape }}")
+        .article-item__body
+          .article-item__title {{ item.title }}
+          .article-item__summary {{ item.teaser }}
+          .article-item__meta
+            .article-item__author
+              {% for author in item.author %}
+              {% assign author_image = author.image.url %}
+              // If there is an author image, use it, if not, use fallback
+              {% if author_image %}
+              %img.article-item__author__image(src="{{ author_image }}" alt="{{ author.first_name | escape }}")
+              {% else %}
+              %img.article-item__author__image(src="{{ 'no_profile_picture.jpg' | theme_image_url }}" alt="{{ author.first_name | escape }}")
+              {% endif %}
+              {% endfor %}
+              {% for author in item.author %}
+              .article-item__author__name
+                // Check whether there are multiple authors by seeing how many
+                // items are looped over by referencing 'forloop'
+                // There are multiple authors
+                {% if forloop.size > 1 %}
+                %span
+                  // First author ourput
+                  {% if forloop.first %}
+                  by {{ author.first_name }}
+                  // Following author output
+                  {% else %}
+                  and {{ author.first_name }}
+                  {% endif %}
+                // There is only a single author
+                {% else %}
+                %span by {{ author.first_name }}
+                {% endif %}
+              {% endfor %}
+
+            .u-group--unstyled
+              .article-item__date
+                %i.fa.fa-clock-o
+                {{ item.posted_at | date: '%a %d %b %Y' }}
+              .article-item__location
+                %i.fa.fa-map-marker
+                {{ item.location.city }}, {{ item.location.country }}
+    {% endfor %}
+  // Bring in the pagination controls
+  {% include 'listing_controls'%}
+{% endpaginate %}
+{% endwith_scope %}

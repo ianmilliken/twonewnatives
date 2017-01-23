@@ -2,7 +2,7 @@
 // [cltn]  = inherited from views/pages/[page].liquid.haml
 
 .container.u-spacer.u-after-site-nav
-  {% if contents.[cltn].size > 0 %}
+  {% if contents.[collection].size > 0 %}
 
   // Editable text must be wrapped within a block for correct engine rendering
   {% block 'header' %}
@@ -15,9 +15,9 @@
   {% endblock %}
 
   // Bring in the pagination results
-  {% include 'listing_pagination' %}
+  {% include 'listing_entries' %}
 
   {% else %}
   %header.listings-header
-    %h2.listings-header__title No more journals!
+    %h2.listings-header__title No more {{ collection }}!
   {% endif %}

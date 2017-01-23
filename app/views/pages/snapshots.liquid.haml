@@ -8,11 +8,6 @@ handle: snapshots
 {% extends 'layouts/default' %}
 {% block content %}
 
-// Store the content_type as "ct" for use in snippets
-{% assign ct = "snapshot" %}
-// Store the collection as "cltn" for use in snippets
-{% assign cltn = "snapshots" %}
-
-{% include 'listing' %}
+{% include 'listing' with content_type: 'snapshot', collection: 'snapshots' %}
 
 {% endblock %}
