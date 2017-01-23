@@ -9,6 +9,7 @@ handle: home
 
 .p-banner
   .container.u-center-group
+    {% with_scope posted_at.lte: now, show_in_listings: true %}
     {% for journal in contents.journals %}
     // Only render the last (latest) journal here
     {% if forloop.last == true %}
@@ -23,6 +24,7 @@ handle: home
       %a.p-banner__button(href="{% path_to journal %}") Read More
     {% endif %}
     {% endfor %}
+    {% endwith_scope %}
 
 .container.u-spacer
   // JOURNAL journals
