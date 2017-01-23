@@ -1,0 +1,14 @@
+-#
+-# location: snippets/site_pages_list
+-# output: a simple list with the sites main level pages as list items
+-# variables: value decalred as parameters on {% include %} tag
+-# example: {% include 'site_pages_list' with list_class: 'list', item_class: 'item' ... %}
+-#
+
+%ul(class="{{ list_class }}")
+  {% for a_page in site.pages %}
+  {% if a_page.depth == 1 %}
+  %li(class="{{ item_class }} {% if page.fullpath contains a_page.fullpath %}{{ item_class }}--active{% endif %}" )
+    %a(class="{{ link_class }}" href="{% path_to a_page %}") {{ a_page.title }}
+  {% endif %}
+  {% endfor %}
